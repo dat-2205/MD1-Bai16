@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="nhietdo" oninput="Temp()">
+<p id="display"></p>
+<script>
+  let Temperature = function (c) {
+    c = parseInt(c)
+    if(c<-273){
+      alert("Không có nhiệt độ này");
+    }else{
+      this.Temperature = c
+    }
+   this.changtoF = function() {
+      return ((c*1.8)+32);
+   }
+   this.changtoK = function() {
+      return(c+273.15);
+   }
+  }
+  function Temp() {
+    let x = document.getElementById("nhietdo").value;
+    if(x==""){
+      document.getElementById("display").innerHTML = " __  độ F  "  + " __ đô K ";
+    }else {
+      let a = new Temperature(x);
+      document.getElementById("display").innerHTML = a.changtoF() + " độ F  " + a.changtoK() + " đô K ";
+    }
+  }
+</script>
+</body>
+</html>

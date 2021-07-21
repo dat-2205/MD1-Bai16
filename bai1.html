@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="chieudai"><input type="number" id="chieurong"> <button onclick="createRec()">Vẽ</button><button onclick="clearR()">Xoá</button>
+<p id="dientich"></p> <p id="chuvi"></p>
+<hr>
+<canvas id="display" width="1500px" height="800px" style="border:1px solid #d3d3d3;" ></canvas>
+<script>
+  let Rectangle = function (chieudai,chieucao) {
+      this.chieudai = parseInt(chieudai);
+      this.chieucao = parseInt(chieucao);
+      this.Dientich = function () {
+         return ( this.chieudai*this.chieucao);
+      }
+      this.Chuvi = function () {
+         return ((this.chieudai+this.chieucao)*2);
+      }
+      this.Hienthi = function () {
+         let cn =  document.getElementById("display").getContext("2d");
+         cn.clearRect(0,0,window.innerWidth,window.innerHeight)
+         cn.beginPath();
+         cn.strokeRect(200,200,chieudai,chieucao)
+      }
+  }
+  function createRec() {
+      // clear()
+     let dai = document.getElementById('chieudai').value;
+     let rong = document.getElementById('chieurong').value;
+     let a  = new Rectangle(dai,rong);
+     a.Hienthi();
+     document.getElementById('dientich').innerHTML = "Diện tích là:  " +a.Dientich();
+     document.getElementById('chuvi').innerHTML = "Chu vi là:  "+a.Chuvi();
+  }
+
+</script>
+</body>
+</html>
