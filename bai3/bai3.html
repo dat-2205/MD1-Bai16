@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="may1">
+<input type="text" id="mess1" placeholder="Tin dang nhan" oninput="a.draftMessage(this.value)"><br>
+<input type="text" id="mess3" placeholder="Tin gui"><label>Send to</label><select name="" id="sendto"></select> <br>
+<button onclick="a.saveoutMessage(document.getElementById('mess3').value,document.getElementById('sendto').value)">Gửi</button>
+<button onclick="a.showSentMessage()">Xem</button>
+<button onclick="a.Onoff()">Nguồn</button>
+<button onclick="a.getBattery()">Sạc</button>
+<button onclick="a.showInboxMessage()">Hộp thư đến</button>
+<button onclick="a.showSentMessage()">Thư đã gửi</button>
+<div id="mess"></div>
+<p id="draft"></p>
+<p id="battery"></p>
+<p id="status"></p>
+</div>
+<div class="may2">
+
+</div>
+<script src="bai3.js"></script>
+</body>
+</html>
